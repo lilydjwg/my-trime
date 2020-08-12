@@ -344,7 +344,7 @@ patch:
     - click: Keyboard_symbols1
       key_back_color: bgn
       key_text_color: tgn
-      long_click: Theme_settings
+      long_click: Color_switch
       width: 12.5
     - click: ','
       key_back_color: bh4

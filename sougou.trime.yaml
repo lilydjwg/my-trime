@@ -181,9 +181,17 @@ colors:
   4: &color4 0xffb3b3b3 #灰+
   5: &color5 0xFF1f272a #灰+++
   6: &color6 0xFFf57d51  #橙
-  7: &color7 0x00 #透明
   8: &color8 0xff253238 #灰++
-  10: &color10 0xff354346
+
+  11:  &color11  0xffb6b6bf
+  12:  &color12  0xff000000
+  13:  &color13  0xFF9c9c9c
+  19:  &color19  0xff8b969a
+  14:  &color14  0xff666666
+  15:  &color15  0xFF1f272a
+  16:  &color16  0xFF9100ff
+  18:  &color18  0xffa3a3ab
+
 
 #配色方案
 preset_color_schemes:
@@ -225,6 +233,45 @@ preset_color_schemes:
     tgn: *color2 #功能键文字颜色
     bbs: *color4 #退格键背景色
     tbs: *color2 #退格键文字颜色
+
+  dark:
+    name: "暗色"  #方案名称
+    author: 依云 #作者信息
+    back_color: *color12 #候选区背景状态栏
+    border_color: *color15 #邊框
+    candidate_separator_color: *color12 #候选分割背景
+    candidate_text_color: *color11 #候选文本
+    comment_text_color: *color13 #提示
+    hilited_back_color: *color12 #高亮编码背景
+    hilited_candidate_back_color: *color12 #高亮候选背景
+    hilited_candidate_text_color: *color16 #高亮候选文本
+    hilited_comment_text_color: *color11 #高亮提示
+    hilited_key_back_color: *color16 #高亮按键背景
+    hilited_key_symbol_color: *color12 #高亮按键符号
+    hilited_key_text_color: *color11 #高亮按键文本
+    hilited_off_key_back_color: *color12 #高亮按键关闭状态背景
+    hilited_off_key_text_color: *color11 #高亮按键关闭状态文本
+    hilited_text_color: *color11 #高亮编码
+    key_back_color: *color12 #按键背景
+    key_symbol_color: *color18 #按键符号
+    key_text_color: *color11 #按键文本
+    keyboard_back_color: *color13 #键盘背景
+    label_color: *color16 #标签
+    off_key_back_color: *color14  #按键关闭状态背景
+    off_key_text_color: *color18 #按键关闭状态文本
+    preview_back_color: *color14 #按键提示背景
+    preview_text_color: *color16 #按键提示文本
+    text_color: *color16 #编码
+    text_back_color: *color12 #编码区背景
+
+    bkg: *color12 #空格键背景色
+    tkg: *color11 #空格键文字颜色
+    benter: *color16 #回车键背景色
+    tenter: *color12 #回车键文字颜色
+    bgn: *color14 #功能键背景色
+    tgn: *color12 #功能键文字颜色
+    bbs: *color14 #退格键背景色
+    tbs: *color12 #退格键文字颜色
 
   #  bh1: *color2 #第一行背景色
   #  th1: *color2 #第一行文字颜色
@@ -278,7 +325,7 @@ preset_keyboards:
       - {click: BackSpace, width: 15, key_back_color: bbs, key_text_color: tbs}
 
       - {click: Keyboard_number, long_click: Menu, width: 12.5, key_back_color: bgn, key_text_color: tgn}
-      - {click: Keyboard_symbols1, long_click: Theme_settings, width: 12.5, key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_symbols1, long_click: Color_switch, width: 12.5, key_back_color: bgn, key_text_color: tgn}
       - {click: ',', label: '，', long_click: '<>{Left}', key_back_color: bh4, key_text_color: th4}
       - {click: space, long_click: Mode_switch, swipe_left: "Left", swipe_right: "Right", swipe_up: date_time, width: 30, key_back_color: bkg, key_text_color: tkg}
       - {click: '.', label: '。', long_click: Keyboard_kao, key_back_color: bh4, key_text_color: th4}
