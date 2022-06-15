@@ -1,0 +1,22 @@
+#!/bin/bash -e
+      
+dir=$(mktemp -d)
+
+trap 'rm -rf "$dir"' EXIT ERR
+
+cd "$dir"
+
+libime_tabledict -d ~/.local/share/fcitx5/table/lilywb.main.dict main.txt
+libime_tabledict -du ~/.local/share/fcitx5/table/lilywb.user.dict user.txt
+tabledict_combine main.txt user.txt > combined.txt
+
+{
+  sed '/^\.\.\.$/q' ~/workspace/my-trime/wubi86.dict.yaml
+  echo
+  cat combined.txt
+} > ~/workspace/my-trime/wubi86.dict.yaml.new
+
+mv ~/workspace/my-trime/wubi86.dict.yaml.new ~/workspace/my-trime/wubi86.dict.yaml
+
+adb connect phone_xz2c:5555
+adb -s phone_xz2c:5555 push ~/workspace/my-trime/wubi86.dict.yaml /sdcard/rime/
